@@ -1,3 +1,9 @@
-{
-  
-}
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "me.dfournier.instantapp",
+    "sha256_cert_fingerprints":
+    ["23:D5:BF:F1:0A:57:06:79:04:D1:58:21:CD:E5:BE:B5:95:BB:09:BF:2B:72:F8:5A:B2:CD:34:06:9A:51:27:6B"]
+  }
+}]
