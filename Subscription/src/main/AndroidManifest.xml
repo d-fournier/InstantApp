@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:dist="http://schemas.android.com/apk/distribution"
+          package="me.dfournier.instantapp.subscription">
+
+    <dist:module
+            dist:instant="true"
+            dist:onDemand="false"
+            dist:title="@string/title_subscription">
+        <dist:fusing dist:include="true"/>
+    </dist:module>
+
+    <application>
+        <activity android:name=".SubscriptionActivity">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data
+                        android:scheme="http"
+                        android:host="instantapp.dfournier.me"
+                        android:path="/subscribe"/>
+                <data
+                        android:scheme="https"/>
+
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
