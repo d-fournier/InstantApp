@@ -22,7 +22,7 @@ android {
     }
 
 
-    dynamicFeatures = [":Subscription", ":AccountManagement", ":Stock"]
+//    dynamicFeatures = [":Subscription", ":AccountManagement", ":Stock"]
 }
 
 dependencies {
@@ -35,5 +35,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    api 'com.google.android.play:core:1.3.6'
+//    api 'com.google.android.play:core:1.3.6'
 }
