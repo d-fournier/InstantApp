@@ -10,8 +10,8 @@ android {
         applicationId "me.dfournier.instantapp"
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -22,7 +22,7 @@ android {
     }
 
 
-//    dynamicFeatures = [":Subscription", ":AccountManagement", ":Stock"]
+    dynamicFeatures = [":Subscription", ":AccountManagement"] // , ":Stock"
 }
 
 dependencies {
