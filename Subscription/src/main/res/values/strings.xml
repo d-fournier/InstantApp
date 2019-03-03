@@ -6,5 +6,8 @@
     <string name="subscription_incentive_download_action">Install the app</string>
     <string name="subscription_incentive_connect">Join your digital bank and connect now to get ready !</string>
     <string name="subscription_incentive_connect_action">Connect</string>
+    <string name="subscription_agency_instruction">Please select an agency on the map</string>
+    <string name="subscription_agency">Your selected Agency: %s</string>
+    <string name="subscription_plan_price">%d € per month</string>
 
 </resources>

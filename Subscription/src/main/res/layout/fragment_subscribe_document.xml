@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -31,26 +30,26 @@
         android:layout_marginStart="@dimen/standard"
         android:layout_marginTop="@dimen/large"
         android:layout_marginEnd="@dimen/standard"
+        android:background="@android:color/holo_blue_light"
         android:scaleType="center"
-        app:srcCompat="@drawable/avd_anim"
         android:tint="@color/white"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title"
-        android:background="@android:color/holo_blue_light" />
-    
+        app:srcCompat="@drawable/avd_anim" />
+
     <TextView
-        app:layout_constraintTop_toTopOf="@id/document_1"
-        app:layout_constraintStart_toStartOf="@id/document_1"
-        app:layout_constraintEnd_toEndOf="@id/document_1"
-        app:layout_constraintVertical_bias="0.8"
-        app:layout_constraintBottom_toBottomOf="@id/document_1"
-        android:textColor="@color/white"
+        style="@style/TextAppearance.AppCompat.Headline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/TextAppearance.AppCompat.Headline"
-        android:text="Id 1"/>
+        android:text="Id 1"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/document_1"
+        app:layout_constraintEnd_toEndOf="@id/document_1"
+        app:layout_constraintStart_toStartOf="@id/document_1"
+        app:layout_constraintTop_toTopOf="@id/document_1"
+        app:layout_constraintVertical_bias="0.8" />
 
     <ImageView
         android:id="@+id/document_2"
@@ -59,26 +58,26 @@
         android:layout_marginStart="@dimen/standard"
         android:layout_marginTop="@dimen/large"
         android:layout_marginEnd="@dimen/standard"
+        android:background="@android:color/holo_green_light"
         android:scaleType="center"
-        app:srcCompat="@drawable/avd_anim"
         android:tint="@color/white"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/guideline2"
         app:layout_constraintTop_toBottomOf="@id/title"
-        android:background="@android:color/holo_green_light" />
+        app:srcCompat="@drawable/avd_anim" />
 
     <TextView
-        app:layout_constraintTop_toTopOf="@id/document_2"
-        app:layout_constraintStart_toStartOf="@id/document_2"
-        app:layout_constraintEnd_toEndOf="@id/document_2"
-        app:layout_constraintVertical_bias="0.8"
-        app:layout_constraintBottom_toBottomOf="@id/document_2"
-        android:textColor="@color/white"
+        style="@style/TextAppearance.AppCompat.Headline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/TextAppearance.AppCompat.Headline"
-        android:text="Id 2"/>
+        android:text="Id 2"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/document_2"
+        app:layout_constraintEnd_toEndOf="@id/document_2"
+        app:layout_constraintStart_toStartOf="@id/document_2"
+        app:layout_constraintTop_toTopOf="@id/document_2"
+        app:layout_constraintVertical_bias="0.8" />
 
     <ImageView
         android:id="@+id/document_3"
@@ -87,27 +86,27 @@
         android:layout_marginStart="@dimen/standard"
         android:layout_marginTop="@dimen/large"
         android:layout_marginEnd="@dimen/standard"
+        android:background="@android:color/holo_orange_light"
         android:scaleType="center"
-        app:srcCompat="@drawable/avd_anim"
         android:tint="@color/white"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/document_1"
-        android:background="@android:color/holo_orange_light" />
+        app:srcCompat="@drawable/avd_anim" />
 
     <TextView
-        app:layout_constraintTop_toTopOf="@id/document_3"
-        app:layout_constraintStart_toStartOf="@id/document_3"
-        app:layout_constraintEnd_toEndOf="@id/document_3"
-        app:layout_constraintVertical_bias="0.8"
-        app:layout_constraintBottom_toBottomOf="@id/document_3"
-        android:textColor="@color/white"
+        style="@style/TextAppearance.AppCompat.Headline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/TextAppearance.AppCompat.Headline"
-        android:text="Home"/>
-    
+        android:text="Home"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/document_3"
+        app:layout_constraintEnd_toEndOf="@id/document_3"
+        app:layout_constraintStart_toStartOf="@id/document_3"
+        app:layout_constraintTop_toTopOf="@id/document_3"
+        app:layout_constraintVertical_bias="0.8" />
+
     <ImageView
         android:id="@+id/document_4"
         android:layout_width="0dp"
@@ -115,32 +114,33 @@
         android:layout_marginStart="@dimen/standard"
         android:layout_marginTop="@dimen/large"
         android:layout_marginEnd="@dimen/standard"
+        android:background="@android:color/holo_red_light"
         android:scaleType="center"
-        app:srcCompat="@drawable/avd_anim"
         android:tint="@color/white"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/guideline2"
         app:layout_constraintTop_toBottomOf="@id/document_2"
-        android:background="@android:color/holo_red_light" />
+        app:srcCompat="@drawable/avd_anim" />
 
     <TextView
-        app:layout_constraintTop_toTopOf="@id/document_4"
-        app:layout_constraintStart_toStartOf="@id/document_4"
-        app:layout_constraintEnd_toEndOf="@id/document_4"
-        app:layout_constraintVertical_bias="0.8"
-        app:layout_constraintBottom_toBottomOf="@id/document_4"
-        android:textColor="@color/white"
+        style="@style/TextAppearance.AppCompat.Headline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/TextAppearance.AppCompat.Headline"
-        android:text="Paycheck"/>
+        android:text="Paycheck"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/document_4"
+        app:layout_constraintEnd_toEndOf="@id/document_4"
+        app:layout_constraintStart_toStartOf="@id/document_4"
+        app:layout_constraintTop_toTopOf="@id/document_4"
+        app:layout_constraintVertical_bias="0.8" />
 
     <Button
         android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/standard"
+        android:enabled="false"
         android:text="Continue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

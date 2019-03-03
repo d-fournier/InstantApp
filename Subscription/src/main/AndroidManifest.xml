@@ -1,34 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:dist="http://schemas.android.com/apk/distribution"
-          package="me.dfournier.instantapp.subscription">
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="me.dfournier.instantapp.subscription">
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <dist:module
-            dist:instant="true"
-            dist:onDemand="false"
-            dist:title="@string/title_subscription">
-        <dist:fusing dist:include="true"/>
+        dist:instant="true"
+        dist:onDemand="false"
+        dist:title="@string/title_subscription">
+        <dist:fusing dist:include="true" />
     </dist:module>
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
     <application>
-        <activity android:name=".SubscriptionActivity"
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".SubscriptionActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:autoVerify="true">
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data
-                        android:scheme="http"
-                        android:host="instantapp.dfournier.me"
-                        android:path="/subscribe"/>
-                <data
-                        android:scheme="https"/>
+                <action android:name="android.intent.action.VIEW" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="instantapp.dfournier.me"
+                    android:path="/subscribe"
+                    android:scheme="http" />
+                <data android:scheme="https" />
             </intent-filter>
 
             <meta-data
-                    android:name="default-url"
-                    android:value="https://instantapp.dfournier.me/subscribe" />
+                android:name="default-url"
+                android:value="https://instantapp.dfournier.me/subscribe" />
         </activity>
     </application>
 

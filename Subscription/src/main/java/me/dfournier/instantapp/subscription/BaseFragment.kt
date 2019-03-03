@@ -7,11 +7,12 @@ open class BaseFragment : Fragment() {
 
     fun goToNextStep(clazz: KClass<*>) {
         val fragment = when (clazz) {
-            Subscription1Fragment::class -> Subscription2Fragment()
-            Subscription2Fragment::class -> Subscription3Fragment()
-            Subscription3Fragment::class -> Subscription4Fragment()
-            Subscription4Fragment::class -> Subscription5Fragment()
-            Subscription5Fragment::class -> Subscription6Fragment()
+            SubscriptionWelcomeFragment::class -> SubscriptionIdentityFragment()
+            SubscriptionIdentityFragment::class -> SubscriptionMapFragment()
+            SubscriptionMapFragment::class -> SubscriptionPlanFragment()
+            SubscriptionPlanFragment::class -> SubscriptionDocumentFragment()
+            SubscriptionDocumentFragment::class -> SubscriptionLoadingFragment()
+            SubscriptionLoadingFragment::class -> SubscriptionConfirmationFragment()
             else -> null
         }
         if (fragment != null) {

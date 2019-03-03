@@ -6,12 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.gms.instantapps.InstantApps
-import kotlinx.android.synthetic.main.fragment_subscribe_6.*
+import kotlinx.android.synthetic.main.fragment_subscribe_confirmation.*
 
-class Subscription6Fragment : BaseFragment() {
+class SubscriptionConfirmationFragment : BaseFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_subscribe_6, container, false)
+        return inflater.inflate(R.layout.fragment_subscribe_confirmation, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

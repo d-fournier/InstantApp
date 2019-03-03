@@ -11,7 +11,7 @@ class SubscriptionActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction().apply {
-                replace(R.id.container, Subscription1Fragment())
+                replace(R.id.container, SubscriptionWelcomeFragment())
                 commit()
             }
         }

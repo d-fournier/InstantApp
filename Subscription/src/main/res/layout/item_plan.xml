@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground">
+
+    <RadioButton
+        android:id="@+id/plan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/standard"
+        android:layout_marginTop="@dimen/small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/plan_text"
+        style="@style/TextAppearance.AppCompat.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/standard"
+        app:layout_constraintBaseline_toBaselineOf="@id/plan"
+        app:layout_constraintStart_toEndOf="@id/plan"
+        tools:text="Plan A" />
+    <TextView
+        android:id="@+id/plan_price"
+        android:layout_width="wrap_content"
+        app:layout_constraintBaseline_toBaselineOf="@id/plan_text"
+        android:layout_marginStart="@dimen/standard"
+        tools:text="0€ per month"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/plan_text"/>
+
+    <TextView
+        android:id="@+id/plan_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/small"
+        tools:text="Free Tier"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/plan_text"
+        app:layout_constraintTop_toBottomOf="@id/plan_text" />
+
+</android.support.constraint.ConstraintLayout>
