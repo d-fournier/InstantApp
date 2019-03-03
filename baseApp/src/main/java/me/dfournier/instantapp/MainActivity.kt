@@ -18,17 +18,11 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
-        stock_button.setOnClickListener {
-/*
-            try {
-                startActivity(
-                    Intent(Intent.ACTION_VIEW)
-                        .setClassName(this, "me.dfournier.instantapp.stock.StockActivity")
-                )
-            } catch (e: ActivityNotFoundException) {
-                Toast.makeText(this, "Activity not found", Toast.LENGTH_SHORT).show()
-            }
-*/
+        subscribe_button.setOnClickListener {
+            startActivity(
+                Intent(Intent.ACTION_VIEW)
+                    .setClassName(this, "me.dfournier.instantapp.subscription.SubscriptionActivity")
+            )
         }
     }
 }

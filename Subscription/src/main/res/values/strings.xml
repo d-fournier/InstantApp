@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="subscription_incentive_download">Join your digital bank and download the application to get ready !</string>
+    <string name="subscription_incentive_download_action">Install the app</string>
+    <string name="subscription_incentive_connect">Join your digital bank and connect now to get ready !</string>
+    <string name="subscription_incentive_connect_action">Connect</string>
+
+</resources>
