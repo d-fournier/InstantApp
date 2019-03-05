@@ -1,1 +1,1 @@
-include ':baseApp', ':Subscription', ':AccountManagement', ':Stock'
+include ':App', ':Subscription', ':AccountManagement', ':Stock', ':Core'

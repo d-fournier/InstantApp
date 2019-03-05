@@ -1,20 +1,22 @@
 package me.dfournier.instantapp
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
 import com.google.android.gms.instantapps.InstantApps
 import com.google.android.play.core.splitinstall.SplitInstallManager
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
 import com.google.android.play.core.splitinstall.SplitInstallRequest
 import kotlinx.android.synthetic.main.activity_main.*
+import me.dfournier.instantapp.core.Activities
+import me.dfournier.instantapp.core.intentTo
 
 
 class MainActivity : AppCompatActivity() {
 
 
-    val splitInstallManager: SplitInstallManager by lazy {
+    private val splitInstallManager: SplitInstallManager by lazy {
         SplitInstallManagerFactory.create(this)
     }
 
@@ -24,8 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         subscribe_button.setOnClickListener {
             startActivity(
-                Intent(Intent.ACTION_VIEW)
-                    .setClassName(this, "me.dfournier.instantapp.subscription.SubscriptionActivity")
+                intentTo(Activities.Subscription)
             )
         }
 
@@ -36,15 +37,13 @@ class MainActivity : AppCompatActivity() {
 
         account_button.setOnClickListener {
             startActivity(
-                Intent(Intent.ACTION_VIEW)
-                    .setClassName(this, "me.dfournier.instantapp.account_management.AccountListActivity")
+                intentTo(Activities.AccountManagement)
             )
         }
 
         stock_button.setOnClickListener {
             val moduleName = getString(R.string.title_stock)
-            val intent =
-                Intent(Intent.ACTION_VIEW).setClassName(this, "me.dfournier.instantapp.subscription.StockActivity")
+            val intent = intentTo(Activities.Stock)
 
             if (splitInstallManager.installedModules.contains(moduleName)) {
                 startActivity(intent)
@@ -63,6 +62,7 @@ class MainActivity : AppCompatActivity() {
                         startActivity(intent)
                     }
                     .addOnFailureListener {
+                        Log.e("MainActivity", "SplitInstallManager error", it)
                         stock_loading.visibility = View.GONE
                         stock_error.visibility = View.VISIBLE
                         stock_button.isEnabled = true

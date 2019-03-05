@@ -10,8 +10,8 @@ android {
         applicationId "me.dfournier.instantapp"
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 6
-        versionName "1.6"
+        versionCode 8
+        versionName "1.8"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         vectorDrawables {
@@ -26,10 +26,12 @@ android {
     }
 
 
-    dynamicFeatures = [":Subscription", ":AccountManagement"] // , ":Stock"
+    dynamicFeatures = [":Subscription", ":AccountManagement", ":Stock"]
 }
 
 dependencies {
+    implementation project(':Core')
+
     api 'com.google.android.gms:play-services-maps:16.1.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
