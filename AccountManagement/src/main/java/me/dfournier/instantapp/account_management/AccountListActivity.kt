@@ -1,9 +1,9 @@
 package me.dfournier.instantapp.account_management
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import me.dfournier.instantapp.BaseActivity
 
-class AccountListActivity : AppCompatActivity() {
+class AccountListActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

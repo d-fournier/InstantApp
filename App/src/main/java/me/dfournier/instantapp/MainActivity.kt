@@ -1,20 +1,21 @@
 package me.dfournier.instantapp
 
+import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import com.google.android.gms.instantapps.InstantApps
+import com.google.android.play.core.splitinstall.SplitInstallHelper
 import com.google.android.play.core.splitinstall.SplitInstallManager
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
 import com.google.android.play.core.splitinstall.SplitInstallRequest
+import com.google.android.play.core.splitinstall.model.SplitInstallSessionStatus
 import kotlinx.android.synthetic.main.activity_main.*
 import me.dfournier.instantapp.core.Activities
 import me.dfournier.instantapp.core.intentTo
 
 
-class MainActivity : AppCompatActivity() {
-
+class MainActivity : BaseActivity() {
 
     private val splitInstallManager: SplitInstallManager by lazy {
         SplitInstallManagerFactory.create(this)
@@ -45,8 +46,8 @@ class MainActivity : AppCompatActivity() {
             val moduleName = getString(R.string.title_stock)
             val intent = intentTo(Activities.Stock)
 
-            if (splitInstallManager.installedModules.contains(moduleName)) {
-                startActivity(intent)
+            if (moduleName in splitInstallManager.installedModules) {
+                launchIntent(intent)
             } else {
                 stock_loading.visibility = View.VISIBLE
                 stock_error.visibility = View.GONE
@@ -55,19 +56,32 @@ class MainActivity : AppCompatActivity() {
                     .newBuilder()
                     .addModule(moduleName)
                     .build()
+
+                splitInstallManager.registerListener { splitInstallSessionState ->
+                    when (splitInstallSessionState.status()) {
+                        SplitInstallSessionStatus.INSTALLED -> {
+                            SplitInstallHelper.updateAppInfo(this@MainActivity)
+                            stock_loading.visibility = View.GONE
+                            stock_button.isEnabled = true
+                            launchIntent(intent)
+                        }
+                        SplitInstallSessionStatus.FAILED -> {
+                            Log.e("MainActivity", "SplitInstallManager error ${splitInstallSessionState.errorCode()}")
+                            stock_loading.visibility = View.GONE
+                            stock_error.visibility = View.VISIBLE
+                            stock_button.isEnabled = true
+                        }
+                        else -> {
+                            Log.e("MainActivity", "SplitInstallManager status ${splitInstallSessionState.status()}")
+                        }
+                    }
+                }
                 splitInstallManager.startInstall(request)
-                    .addOnSuccessListener {
-                        stock_loading.visibility = View.GONE
-                        stock_button.isEnabled = true
-                        startActivity(intent)
-                    }
-                    .addOnFailureListener {
-                        Log.e("MainActivity", "SplitInstallManager error", it)
-                        stock_loading.visibility = View.GONE
-                        stock_error.visibility = View.VISIBLE
-                        stock_button.isEnabled = true
-                    }
             }
         }
+    }
+
+    private fun launchIntent(intent: Intent) {
+        startActivity(intent)
     }
 }

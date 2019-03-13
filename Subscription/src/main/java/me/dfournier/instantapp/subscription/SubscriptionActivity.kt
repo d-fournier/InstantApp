@@ -2,8 +2,9 @@ package me.dfournier.instantapp.subscription
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import me.dfournier.instantapp.BaseActivity
 
-class SubscriptionActivity : AppCompatActivity() {
+class SubscriptionActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

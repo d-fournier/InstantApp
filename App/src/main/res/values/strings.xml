@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">InstantApp</string>
     <string name="title_subscription">Subscription</string>
-    <string name="title_account_management">Account Management</string>
-    <string name="title_accountmanagement">Account Management</string>
-    <string name="title_stock">Stock Module</string>
+    <string name="title_account_management">AccountManagement</string>
+    <string name="title_stock">Stock</string>
     <string name="title_activity_maps">Map</string>
 </resources>
