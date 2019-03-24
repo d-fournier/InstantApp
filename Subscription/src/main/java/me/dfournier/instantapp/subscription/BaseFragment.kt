@@ -1,5 +1,7 @@
 package me.dfournier.instantapp.subscription
 
+import android.os.Build
+import android.security.ConfirmationPrompt
 import android.support.v4.app.Fragment
 import kotlin.reflect.KClass
 
@@ -11,8 +13,15 @@ open class BaseFragment : Fragment() {
             SubscriptionIdentityFragment::class -> SubscriptionMapFragment()
             SubscriptionMapFragment::class -> SubscriptionPlanFragment()
             SubscriptionPlanFragment::class -> SubscriptionDocumentFragment()
-            SubscriptionDocumentFragment::class -> SubscriptionLoadingFragment()
-            SubscriptionLoadingFragment::class -> SubscriptionConfirmationFragment()
+            SubscriptionDocumentFragment::class -> {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P && ConfirmationPrompt.isSupported(context!!)) {
+                    SubscriptionConfirmationFragment()
+                } else {
+                    SubscriptionLoadingFragment()
+                }
+            }
+            SubscriptionConfirmationFragment::class -> SubscriptionLoadingFragment()
+            SubscriptionLoadingFragment::class -> SubscriptionEndFragment()
             else -> null
         }
         if (fragment != null) {

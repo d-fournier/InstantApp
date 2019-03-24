@@ -39,6 +39,9 @@ class SubscriptionMapFragment : BaseFragment() {
         }
 
         map.getMapAsync { maps ->
+            maps.uiSettings.isMyLocationButtonEnabled = true
+            maps.isMyLocationEnabled = true
+
             markers.addAll(
                 markerOptions.map { maps.addMarker(it) }
             )

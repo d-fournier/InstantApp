@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/large"
         android:layout_marginTop="@dimen/standard"
-        android:text="Validation"
+        android:text="Finished"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,13 +23,41 @@
         android:layout_marginStart="@dimen/large"
         android:layout_marginTop="@dimen/large"
         android:layout_marginEnd="@dimen/large"
-        android:text="You are going to finalize your contract.\n Please sign it electronically."
-        app:layout_constraintBottom_toTopOf="@+id/action"
+        android:text="Your subscription has been sent. You will receive an email to confirm the process. To follow the progress, you can use the reference"
+        app:layout_constraintBottom_toTopOf="@+id/subscription_reference"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title"
         app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/subscription_reference"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/standard"
+        android:layout_marginStart="@dimen/large"
+        android:layout_marginEnd="@dimen/large"
+        android:text="78658A58"
+        app:layout_constraintBottom_toTopOf="@+id/text_incentive_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_1" />
+
+    <TextView
+        android:id="@+id/text_incentive_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/large"
+        android:layout_marginEnd="@dimen/large"
+        tools:text="@string/subscription_incentive_download"
+        app:layout_constraintBottom_toTopOf="@+id/action"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subscription_reference" />
 
     <Button
         android:id="@+id/action"
@@ -37,11 +65,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/large"
-        android:text="Sign"
+        tools:text="@string/subscription_incentive_download_action"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_1" />
+        app:layout_constraintTop_toBottomOf="@+id/text_incentive_2" />
 
 </android.support.constraint.ConstraintLayout>
